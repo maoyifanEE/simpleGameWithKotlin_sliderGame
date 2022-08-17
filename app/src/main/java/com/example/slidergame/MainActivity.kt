@@ -50,12 +50,18 @@ class MainActivity : AppCompatActivity() {
             }else if(moveCheck(0) != -1){
                 exchange(0,moveCheck(0),button)
             }
+            if(successCheck(num)){
+                toast("success")
+            }
         }
         button[1].setOnClickListener{
             if(num[1] == 0){
                 toast("Nothing here")
             }else if(moveCheck(1) != -1){
                 exchange(1,moveCheck(1),button)
+            }
+            if(successCheck(num)){
+                toast("success")
             }
         }
         button[2].setOnClickListener{
@@ -64,12 +70,18 @@ class MainActivity : AppCompatActivity() {
             }else if(moveCheck(2) != -1){
                 exchange(2,moveCheck(2),button)
             }
+            if(successCheck(num)){
+                toast("success")
+            }
         }
         button[3].setOnClickListener{
             if(num[3] == 0){
                 toast("Nothing here")
             }else if(moveCheck(3) != -1){
                 exchange(3,moveCheck(3),button)
+            }
+            if(successCheck(num)){
+                toast("success")
             }
         }
         button[4].setOnClickListener{
@@ -78,12 +90,18 @@ class MainActivity : AppCompatActivity() {
             }else if(moveCheck(4) != -1){
                 exchange(4,moveCheck(4),button)
             }
+            if(successCheck(num)){
+                toast("success")
+            }
         }
         button[5].setOnClickListener{
             if(num[5] == 0){
                 toast("Nothing here")
             }else if(moveCheck(5) != -1){
                 exchange(5,moveCheck(5),button)
+            }
+            if(successCheck(num)){
+                toast("success")
             }
         }
         button[6].setOnClickListener{
@@ -92,12 +110,18 @@ class MainActivity : AppCompatActivity() {
             }else if(moveCheck(6) != -1){
                 exchange(6,moveCheck(6),button)
             }
+            if(successCheck(num)){
+                toast("success")
+            }
         }
         button[7].setOnClickListener{
             if(num[7] == 0){
                 toast("Nothing here")
             }else if(moveCheck(7) != -1){
                 exchange(7,moveCheck(7),button)
+            }
+            if(successCheck(num)){
+                toast("success")
             }
         }
         button[8].setOnClickListener{
@@ -106,9 +130,21 @@ class MainActivity : AppCompatActivity() {
             }else if(moveCheck(8) != -1){
                 exchange(8,moveCheck(8),button)
             }
+            if(successCheck(num)){
+                toast("success")
+            }
         }
 
 
+    }
+
+    private fun successCheck(num: Array<Int>): Boolean {
+        for(i in 0..6){
+            if(num[i]+1 != num[i+1]){
+                return false
+            }
+        }
+        return true
     }
 
     fun toast(text:String){
@@ -261,6 +297,7 @@ class MainActivity : AppCompatActivity() {
         num[startPos] = num[targetPos]
         num[targetPos] = temp
     }
+
 
 
 
